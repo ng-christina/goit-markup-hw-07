@@ -25,6 +25,10 @@
 /*others*/
 --radius: 4px;
 --anim-fast: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+/*BREAKPOINTS*/
+--mobile-screen: 480px;
+--tablet: 768px;
+--desktop: 1200px;
 }
 
 /*   ANIMATION   */
@@ -38,11 +42,28 @@
     color: var(--text);
 }
 .container{
-    width: 1158px ;
+    /*320px <= phone scren <=infinity */
+    max-width: 428px;
     padding-left: 15px;
-    padding-right: 15px;;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    /*width: 1158px ;*/
+    outline: 2px solid red;
+    outline-offset: -2px;
+}
+/*768px <= tablet scren <=infinity */
+@media screen and (min-width: 768px){
+    .container{
+        max-width: 768px;
+    }
+}
+
+/*1200px <= dekstop scren <=infinity */
+@media screen and (min-width: 1200px){
+    .container{
+        max-width: 1158px;
+    }
 }
 /* reset start */
 h1,
@@ -78,8 +99,18 @@ img{
 }
 
 .section{
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+@media screen and (min-width: 768px){
+    .section{
+        padding-top: 96px;
+        padding-bottom: 96px;}
+}
+@media screen and (min-width: 1200px){
+    .section{
+        padding-top: 120px;
+        padding-bottom: 120px;}
 }
 .list{
     list-style: none;
@@ -95,23 +126,36 @@ img{
     text-align: Center;
     color: var(--modal-overlay);
 }
+
 .title3{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: calc(40/36);
     letter-spacing: 0.02em;
     color:var(--modal-overlay);
+}
+@media screen and (min-width: 1200px) {
+    .title3{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+    }
 }
 .text{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color:var(--text);
+}
+@media screen and (min-width: 1200px) {
+    .text{
+        font-weight: 400;
+    }
 }
 /* Header */
 .header{ 
@@ -298,16 +342,40 @@ img{
 
 .list-future{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 24px;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 72px;
 }
-.future{
+/*.future{
     flex-basis: calc((100% - (24px * 3)) / 4);
+}*/
+@media screen and (min-width: 768px){
+    .list-future{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 72px 24px;
+    }
+    .future{
+        flex-basis: calc((100% - (24px * 1)) / 2);
+    }
 }
-
+@media screen and (min-width: 1200px){
+    .list-future{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+    }
+    .future{
+        flex-basis: calc((100% - (24px * 3)) / 4);
+    }
+}
 .div-ft-ic{
-    display: flex;
+    display: none;
     width: 264px;
     height: 112px;
     align-items: center;
@@ -316,30 +384,40 @@ img{
     border-radius: 4px;
     margin-bottom: 8px;
 }
-/*
-.div-ft-ic:hover .future-icons{
-    transform: scale(2);
+@media screen and (min-width: 1200px) {
+    .div-ft-ic{
+        display: flex;
+    }
 }
-.future-img{
-}
- .future-icons{
- transition: var(--anim-fast);
-}*/
+
 .quality{
     margin-bottom: 8px;
 }
+@media screen and (max-width: 767px) {
+    .quality{
+        text-align: center;}
+}
 
-.text-future{ }
  /* What are we doing */
-.doing{ }
+
 .title-do{
+    display: none;
     margin-bottom: 72px;
-   }
+}
 .list-do{
-display: flex;
+display: none;
 flex-wrap: wrap;
 align-items: center;
 gap: 24px;
+ }
+ @media screen and (min-width: 1200px) {
+    .list-do{
+        display: flex;
+        }
+    .title-do{
+         display: block ;
+         margin-bottom: 72px;
+    }
  }
 .picture-list{
 flex-basis: calc((100% - (24px * 2)) / 3);
@@ -417,17 +495,34 @@ transition: transform 1500ms;}*/
 .cust-sec{
     padding-top: 130px;
 }
-.cust-cont{ 
-}
+
 .t-cust{
     margin-bottom: 72px;
 }
 .custumer-list{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
+    row-gap: 72px;
+    column-gap: 16px;
 }
-.custumers{ }
+@media screen and (min-width: 768px) {
+    .custumer-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        row-gap: 72px;
+        column-gap: 24px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .custumer-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+    }
+}
 .cust-link{
     display: flex;
     align-items: center;
