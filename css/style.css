@@ -180,6 +180,11 @@ img{
     Width:115px;
     margin-right: 249px;
 }
+@media screen and (max-width: 419px){
+    .logotype{
+        margin-right: 0;
+    }
+}
 @media screen and (min-width: 768px){
     .logotype{
         margin-right: 120px;
@@ -437,10 +442,12 @@ img{
 }
 
 /* page 1*/
-
-.information{
+@media screen and (min-width: 1200px) {
+  .information{
     padding-bottom: 0px;
+}  
 }
+
 
 /*  card-set  */
 
