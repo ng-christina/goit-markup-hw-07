@@ -1385,6 +1385,11 @@ transition: transform 1500ms;}*/
     font-size: 36px;
     line-height: calc(40/36);
   }
+  @media screen and (max-width:427px) {
+    .tel-burger{
+        font-size: 30px;
+    }
+  }
 .mail-burger{
     font-family: 'Roboto';
     font-style: normal;
@@ -1396,7 +1401,6 @@ transition: transform 1500ms;}*/
   } 
 .social-burger{
     display: flex;
-    justify-content: center;
     gap: 56px;
   }
 .social-burger-list{
