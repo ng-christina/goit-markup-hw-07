@@ -182,7 +182,17 @@ img{
     font-size: 18px;
     line-height: 1.33;
     Width:115px;
-    margin-right: 76px;
+    margin-right: 249px;
+}
+@media screen and (min-width: 768px){
+    .logotype{
+        margin-right: 120px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .logotype{
+        margin-right: 76px;
+    }
 }
 .logo-header{
     color:var(--dark);
@@ -193,13 +203,18 @@ img{
 .navigation{
    margin-right: auto;
 }
+
 .menu{
     display: none;
     width: 261px;
    /* display: flex;*/
     gap: 40px;
 }
-
+@media screen and (min-width: 768px){
+    .menu{
+        display: flex;
+    }
+}
 .menu-item{ }
 .menu-link{
     padding: 24px 0px;
@@ -241,19 +256,38 @@ img{
 .contacts{ 
     display: none;
    /* display: flex;*/
-    gap: 0px 40px;
+   /* gap: 0px 40px;*/
 }
-.contacts-item{ }
+@media screen and (min-width: 768px) {
+    .contacts{ 
+        display: flex;
+        flex-direction: column;
+        column-gap: 4px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .contacts{ 
+        display: flex;
+        flex-direction: row;
+        gap: 0px 40px;
+    }
+}
 .mail{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    width: 152px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color:var(--text);
 
     transition: color var(--anim-fast);
+}
+@media screen and (min-width: 768px) and (max-width:1199px) {
+    .mail{
+        font-size: 12px;
+        line-height: calc(16/12);
+        letter-spacing: 0.04em;
+        }
 }
 .mail:hover,
 .mail:focus{
@@ -267,14 +301,19 @@ img{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    width: 151px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color:currentColor;
 
     transition: color var(--anim-fast);
 }
-
+@media screen and (min-width: 768px) and (max-width:1199px){
+    .tel{
+        font-size: 12px;
+        line-height: calc(16/12);
+        letter-spacing: 0.04em;   
+        }
+}
 .tel:hover,
 .tel:focus{
     color:var(--ctas-focusedActive-statesLink);
