@@ -102,11 +102,7 @@ img{
     padding-top: 96px;
     padding-bottom: 96px;
 }
-@media screen and (min-width: 768px){
-    .section{
-        padding-top: 96px;
-        padding-bottom: 96px;}
-}
+
 @media screen and (min-width: 1200px){
     .section{
         padding-top: 120px;
@@ -269,7 +265,6 @@ img{
 }
 @media screen and (min-width: 1200px) {
     .contacts{ 
-        display: flex;
         flex-direction: row;
         gap: 0px 40px;
     }
@@ -399,7 +394,6 @@ img{
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    width: 318px;
     margin-bottom: 72px;
     color:var(--white);
     text-transform: capitalize;
@@ -700,18 +694,59 @@ transition: transform 1500ms;}*/
 
 .footer{
     background-color:var(--background-dark);
-    padding-top: 100px;
-    padding-bottom: 100px; 
+    padding-top: 96px;
+    padding-bottom: 96px; 
+}
+@media screen and (min-width:1200px) {
+    .footer{
+        padding-top: 100px;
+        padding-bottom: 100px; 
+    }
 }
 .div-footer{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
+@media screen and (min-width:768px) {
+    .div-footer{ 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        gap: 72px 24px;
+        align-items:normal;
+    }
+}
+@media screen and (min-width:1200px) {
+    .div-footer{
+       gap: 24px;
+    }
+}
+
 .div-logo{
-    margin-right: 120px;
+    margin-bottom: 72px;
+}
+@media screen and (min-width:768px) {
+    .div-logo{
+       margin-bottom: 0;
+    }
+}
+@media screen and (min-width:1200px){
+    .div-logo{
+        margin-right: 120px;
+    }
 }
 .link-footer{
     padding: 0px;
     margin-bottom: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media screen and (min-width:768px){
+    .link-footer{
+        margin-left: 0;
+    }
 }
 .details{
     color:var(--accent);
@@ -722,9 +757,23 @@ transition: transform 1500ms;}*/
     color: var(--white);
     font-weight: 500;
     margin-bottom: 16px;
+    text-align:center;
 }
+@media screen and (min-width:768px){
+    .text-soc{
+        text-align: inherit;
+    }
+}
+
 .div-soc{
-   margin-right: auto
+   /*margin-right: auto*/
+   margin-bottom: 72px;
+}
+@media screen and (min-width:1200px){
+    .div-soc{
+        margin-right: auto;
+        margin-bottom: 0;
+    }
 }
 .footer-list{
     display: flex;
@@ -753,17 +802,37 @@ transition: transform 1500ms;}*/
 .footer-link:focus{
     background-color: var(--success);
 }
+@media screen and (min-width: 768px) and (max-width:1199px) {
+    .div-sub{
+    padding-right: 40px;}
+}
+
+
 .footer-subcribe{
-    display: flex;
+    /*display: flex;
     gap: 24px;
-    margin-right: auto;
+    margin-right: auto;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     gap: 16px;
+}
+@media screen and (min-width:768px) {
+    .footer-subcribe{
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        margin-right: auto;
+    }
 }
 .subcribe-label{ }
 
 .subcribe-input{
-    width: 264px;
+    /*width: 264px;*/
+    width: 396px;
     height: 40px;
-    /*width: 100%;*/
+    /*min-width: 100%;*/
     padding-left: 16px;
     
     background-color: transparent;
@@ -773,7 +842,16 @@ transition: transform 1500ms;}*/
     
     color: var(--white);
 }
-
+@media screen and (min-width:768px) {
+    .subcribe-input{
+        width: 264px;
+    }
+}
+@media screen and (max-width:420px) {
+    .subcribe-input{
+        width: 264px;
+    }
+}
 .buttun-subcribe-form{
     position: relative;
 }
@@ -953,7 +1031,7 @@ transition: transform 1500ms;}*/
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 
-    width: 408px;
+    width: 392px;
     padding: 72px 24px 24px 24px;
 
     background: #FCFCFC;
@@ -964,10 +1042,16 @@ transition: transform 1500ms;}*/
 
     transition: transform var(--anim-fast) 300ms, opacity var(--anim-fast) 300ms ;
 }
+@media screen and (min-width:768px) {
+    .modal{
+        width: 408px;
+
+    }
+}
 .backdrop.is-hidden .modal{
     transform:translateX(-50%) translateY(-80%) ;
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0ms;
 }
 .modal-btb{
     display: flex;
